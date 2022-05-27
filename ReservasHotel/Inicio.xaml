@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReservasHotel.Inicio">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="MyListView" RowHeight="100" ItemTapped="MyListView_ItemTapped" >
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell>
+
+                            <Grid Grid.Row="3" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Image   Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Source="{Binding imagen}" x:Name="imageS" Margin="10"></Image>
+
+                                <Label Grid.Row="0" Grid.Column="1" FontSize="20"  Text="{Binding descripcion}"></Label>
+                                <Label Grid.Row="1" Grid.Column="1" FontSize="20"  Text="Precio: "></Label>
+                                <Label Grid.Row="1" Grid.Column="2" FontSize="20"  Text="{Binding precio}"></Label>
+                                <Label Grid.Row="2" Grid.Column="1" FontSize="20"  Text="Capacidad: "></Label>
+                                <Label Grid.Row="2" Grid.Column="2" FontSize="20"  Text="{Binding capacidad}"></Label>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReservasHotel.Detail">
+   
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="MyListView" RowHeight="200"  ItemTapped="MyListView_ItemTapped" >
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell >
+                            <Grid  Grid.Row="2" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame CornerRadius="20"  Padding="0" IsClippedToBounds="True" Margin="20">
+                                    <Image  Aspect="AspectFill" Grid.Column="0" Grid.Row="0" Source="{Binding imagen}" x:Name="imageS" HeightRequest="500" ></Image>
+                                </Frame>
+
+                                <StackLayout Grid.Column="1" Padding="15">
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Grid.Row="0"  Text="{Binding descripcion}" Grid.Column="0" FontSize="Title"></Label>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30" />
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Grid.Row="1" Source="money.png" HeightRequest="25" HorizontalOptions="Start"></Image>
+                                        <Label  Text="{Binding precio}" Grid.Column="1" Grid.Row="1" VerticalTextAlignment="Center" ></Label>
+                                        <Image Grid.Column="0" Grid.Row="2" Source="personas.png" HeightRequest="25" HorizontalOptions="Start"></Image>
+                                        <Label  Text="{Binding capacidad}" Grid.Column="1" Grid.Row="2" VerticalTextAlignment="Center" ></Label>
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

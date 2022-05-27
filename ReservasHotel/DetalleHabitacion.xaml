@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Class="ReservasHotel.DetalleHabitacion">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Margin="20">
+            <Label x:Name="NombreHabitacion" HorizontalTextAlignment="Center" FontSize="50"></Label>
+
+            <Frame CornerRadius="20"  Padding="0" IsClippedToBounds="True" >
+
+                <Image x:Name="ImgHabitacion" WidthRequest="150" HeightRequest="300"  Aspect="AspectFill"></Image>
+            </Frame>
+                <Frame CornerRadius="20" BackgroundColor="LightSlateGray" Margin="0,0,0,20">
+                <Grid Grid.Row="2"  BackgroundColor="Transparent" >
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Grid.Column="0" Grid.Row="0" Text="Número de Habitación : " FontSize="Large"></Label>
+                    <Label Grid.Column="1" Grid.Row="0" x:Name="numeroHabitacion" FontSize="Large"></Label>
+
+                    <Label Grid.Column="0" Grid.Row="1" Text=" Piso : " FontSize="Large"></Label>
+                    <Label Grid.Column="1" Grid.Row="1" x:Name="Numpiso" FontSize="Large"></Label>
+
+                    <Label Grid.Column="0" Grid.Row="2" Text=" Precio : " FontSize="Large"></Label>
+                    <Label Grid.Column="1" Grid.Row="2" x:Name="precio" FontSize="Large" ></Label>
+
+                    <Label Grid.Column="0" Grid.Row="3" Text=" Capacidad : " FontSize="Large"></Label>
+                    <Label Grid.Column="1" Grid.Row="3" x:Name="capacidad" FontSize="Large"></Label>
+
+
+
+                </Grid>
+
+                </Frame>
+                <Label Text="Fecha de Inicio : "  FontSize="Large"></Label>
+
+                <DatePicker  Date="{x:Static sys:DateTime.Now}"  x:Name="datePickerInit"  MinimumDate="{x:Static sys:DateTime.Now}">
+                    <DatePicker.Format >yyyy-MM-dd</DatePicker.Format>
+                    <DatePicker.MaximumDate>
+                    <sys:DateTime x:FactoryMethod="Parse">
+                        <x:Arguments>
+                            <x:String>Dec 31 2050</x:String>
+                        </x:Arguments>
+                    </sys:DateTime>
+                </DatePicker.MaximumDate>
+            </DatePicker>
+            <TimePicker x:Name="timePickerInit"></TimePicker>
+
+
+                <Label Text="Fecha de Fin : " FontSize="Large"></Label>
+
+                <DatePicker  Date="{x:Static sys:DateTime.Now}" MinimumDate="{x:Static sys:DateTime.Now}" x:Name="datePickerEnd" >
+                <DatePicker.Format >yyyy-MM-dd</DatePicker.Format>
+              
+                <DatePicker.MaximumDate>
+                    <sys:DateTime x:FactoryMethod="Parse">
+                        <x:Arguments>
+                            <x:String>Dec 31 2050</x:String>
+                        </x:Arguments>
+                    </sys:DateTime>
+                </DatePicker.MaximumDate>
+            </DatePicker>
+            <TimePicker x:Name="timePickerEnd"></TimePicker>
+
+
+            <Picker Title="Selecciona a tarjeta de crédito"
+        SelectedItem="{Binding id_tarjeta}"
+        ItemDisplayBinding="{Binding numero}" x:Name="cmb" SelectedIndexChanged="cmb_SelectedIndexChanged"
+        />
+
+            <Button Text="Reservar" Clicked="Button_Clicked_1"></Button>
+                <Label></Label>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

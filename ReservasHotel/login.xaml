@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReservasHotel.login">
+    <ContentPage.Content>
+        <StackLayout Margin="20" x:Name="FormLogin">
+            <Image Source=""></Image>
+            <ActivityIndicator Color="Orange" x:Name="Loading" />
+            <Label Text="Validando..." x:Name="mensaje" HorizontalTextAlignment="Center" FontSize="15" IsVisible="false"></Label>
+
+            <Image Source="user.png" HeightRequest="150" WidthRequest="150" Margin="0,0,0,20"></Image>
+            <Label Text="Correo"></Label>
+            <Entry x:Name="correo"></Entry>
+
+            <Label Text="Contrasenia"></Label>
+            <Entry x:Name="contrasenia" IsPassword="True"></Entry>
+
+            <Button Text="Iniciar sesión" Clicked="BtnValidar"></Button>
+            <Button Text="Registrarse" Clicked="BtnIrAregistrar"></Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

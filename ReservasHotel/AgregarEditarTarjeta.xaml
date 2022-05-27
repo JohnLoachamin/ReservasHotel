@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReservasHotel.AgregarEditarTarjeta">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label></Label>
+            <Image VerticalOptions="Center" x:Name="logo" HeightRequest="200" Margin="0,0,0,40" Source="logotarjeta.png"></Image>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Text="Número de Tarjeta : "></Label>
+                <Entry Grid.Column="1" Grid.Row="0" x:Name="numeroTarjeta" MaxLength="10" Keyboard="Numeric" Placeholder="Ingresa número de tarjeta" TextChanged="Entry_TextChanged"></Entry>
+
+                <Label Grid.Column="0" Grid.Row="1" Text="Banco : "></Label>
+                <Entry Grid.Column="1" Grid.Row="1" x:Name="banco"  Placeholder="Banco" IsReadOnly="True"></Entry>
+
+                <Label Grid.Column="0" Grid.Row="2" Text="Tipo Tarjeta : "></Label>
+                <Entry Grid.Column="1" Grid.Row="2" x:Name="tipo" Placeholder="Tipo tarjeta" IsReadOnly="True"></Entry>
+
+                <Label Grid.Column="0" Grid.Row="3" Text="Código de seguridad : "></Label>
+                <Entry Grid.Column="1" Grid.Row="3" x:Name="codSeguridad" MaxLength="3" Keyboard="Numeric"  Placeholder="Ingresa código de seguridad" ></Entry>
+            </Grid>
+            <Button Text="Agregar" Clicked="Button_Clicked" x:Name="AgregarTarjeta"></Button>
+            <Button Text="Actualizar" Clicked="ActualizarTarjeta_Clicked" IsVisible="false" x:Name="ActualizarTarjeta"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Class="ReservasHotel.perfil">
+    <ContentPage.Content>
+       
+        <StackLayout>
+            <ActivityIndicator Color="Orange" x:Name="Loading" Margin="5"/>
+            <Label Text="Actualizando Datos..." x:Name="mensaje" HorizontalTextAlignment="Center" FontSize="15" IsVisible="false"></Label>
+
+            <StackLayout Padding="0,-10,0,10">
+            <Frame CornerRadius="100" 
+           HeightRequest="150"
+           WidthRequest="150"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Padding="0"
+           IsClippedToBounds="True" >
+
+                <Frame.Content >
+                    <Image  x:Name="Photo" Aspect="Fill" Source="">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped"
+                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+
+                </Frame.Content>
+            </Frame>
+            </StackLayout>
+
+    
+            <StackLayout BackgroundColor="LightSlateGray" Margin="20,30,20,5" HeightRequest="250" x:Name="contenedor">
+                <Label x:Name="nombreC" HorizontalTextAlignment="Center" FontSize="30" TextColor="Black" VerticalTextAlignment="Center"></Label>
+                <Entry x:Name="nombreEdit" IsVisible="false" BackgroundColor="Black"></Entry>
+                <Label x:Name="apellidoC" HorizontalTextAlignment="Center" FontSize="30" TextColor="Black" VerticalTextAlignment="Center"></Label>
+                <Entry x:Name="apellidoEdit" IsVisible="false" BackgroundColor="Black"></Entry>
+                <Label x:Name="cedula" HorizontalTextAlignment="Center" FontSize="30" TextColor="Black" VerticalTextAlignment="Center"></Label>
+                <Entry x:Name="cedulaEdit" IsVisible="false" BackgroundColor="Black"></Entry>
+                <Label x:Name="fechaNacimiento" HorizontalTextAlignment="Center" FontSize="30" TextColor="Black" VerticalTextAlignment="Center"></Label>
+                <DatePicker  Date="{x:Static sys:DateTime.Now}" x:Name="datePicker" IsVisible="false" BackgroundColor="Black">
+                    <DatePicker.Format >yyyy-MM-dd</DatePicker.Format>
+                    <DatePicker.MinimumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 1980</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Dec 31 2050</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>
+                </DatePicker>
+                <Label x:Name="correo" HorizontalTextAlignment="Center" FontSize="30" TextColor="Black" VerticalTextAlignment="Center"></Label>
+                <Entry x:Name="correoEdit" IsVisible="false" BackgroundColor="Black"></Entry>
+            </StackLayout>
+            <Frame BackgroundColor="Transparent" >
+                <Button Text="Editar"  Clicked="Button_Clicked" x:Name="BtnAccion"></Button>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

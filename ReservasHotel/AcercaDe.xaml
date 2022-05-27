@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReservasHotel.AcercaDe">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout >
+            <Label x:Name="nombreHotel" HorizontalTextAlignment="Center" FontSize="60" Margin="20"></Label>
+            <Image x:Name="ImagenHotel" HorizontalOptions="Center" Margin="20"></Image>
+            <Label x:Name="descripHotel" HorizontalTextAlignment="Start" FontSize="20" Margin="20"></Label>
+
+            <Label  HorizontalTextAlignment="Center" Text="Dirección Hotel : " FontSize="20"></Label>
+            <Label x:Name="dirHotel" HorizontalTextAlignment="Center" FontSize="20"></Label>
+
+
+            <Label  HorizontalTextAlignment="Center" Text="Contactos : " FontSize="20"></Label>
+            <Label x:Name="contactHotel" HorizontalTextAlignment="Center" FontSize="20"></Label>
+
+
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

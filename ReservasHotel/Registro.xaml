@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Class="ReservasHotel.Registro">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout  x:Name="MyForm" Margin="20">
+
+            <ActivityIndicator Color="Orange" x:Name="Loading" Margin="0,50,0,0"/>
+            <Label Text="Validando..." x:Name="mensaje" HorizontalTextAlignment="Center" FontSize="15" ></Label>
+
+
+
+              <Frame CornerRadius="100" 
+           HeightRequest="150"
+           WidthRequest="150"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Padding="0"
+           IsClippedToBounds="True">
+
+                <Frame.Content>
+                    <Image Source="user.png" x:Name="Photo" Aspect="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                Tapped="CargaImagen"
+                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </Frame.Content>
+                
+            </Frame>
+
+            
+            <Label Text="Nombre : "></Label>
+                <Entry x:Name="nombre" Placeholder="Ingresa Nombre"></Entry>
+
+                <Label Text="Apellido : "></Label>
+                <Entry x:Name="apellido" Placeholder="Ingresa Apellido"></Entry>
+
+                <Label Text="Cédula : "></Label>
+                <Entry x:Name="cedula" Placeholder="Ingresa Cedula"></Entry>
+
+                <Label Text="Contraseña"></Label>
+                <Entry x:Name="contrasenia" Placeholder="Ingresa contraseña" IsPassword="True"></Entry>
+
+                <Label Text="Correo"></Label>
+                <Entry x:Name="correo" Placeholder="Ingresa correo"></Entry>
+
+                <Label Text="Fecha de Nacimiento : "></Label>
+                <DatePicker  Date="{x:Static sys:DateTime.Now}" x:Name="datePicker" >
+                    <DatePicker.Format >yyyy-MM-dd</DatePicker.Format>
+                    <DatePicker.MinimumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 1980</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Dec 31 2050</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>
+                </DatePicker>
+            <Button Text="Registar" Clicked="RegistraUsuario" x:Name="resgistra"></Button>
+                <Label></Label>
+            
+
+
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

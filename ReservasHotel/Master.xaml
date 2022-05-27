@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReservasHotel.Master"
+             Title="Master">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Image Source="https://cocotog.com/sisreha/img/logo-sisreha.png" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped"
+                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Button  Text="Perfil" x:Name="bntPerfil" BackgroundColor="Transparent" Clicked="bntPerfil_Clicked"></Button>
+            <Button  Text="Mis Tarjetas" x:Name="bntTarjetas" BackgroundColor="Transparent" Clicked="bntTarjetas_Clicked"></Button>
+            <Button Text=" * Nueva Tarjeta" Margin="50,0,0,0" x:Name="bntNTarjetas" BackgroundColor="Transparent" Clicked="bntNTarjetas_Clicked"></Button>
+            <Button Text="Mis Reservas" x:Name="bntReservas" BackgroundColor="Transparent" Clicked="bntReservas_Clicked"></Button>
+            <Button Text="Acerca de" x:Name="bntAcercade" BackgroundColor="Transparent" Clicked="bntAcercade_Clicked"></Button>
+            <Button WidthRequest="200"  Text="Cerrar Sesión" BackgroundColor="Black" x:Name="bntCerrarSesion"  Clicked="bntCerrarSesion_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
